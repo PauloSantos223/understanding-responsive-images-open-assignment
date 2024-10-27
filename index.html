@@ -10,13 +10,21 @@
 	<link rel="stylesheet" href="normalize.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,700&family=Merriweather:ital@0;1&display=swap"
+		rel="stylesheet">
 
 	<style>
 		/* General Styling */
 		body {
+			display: grid;
+			grid-template-rows: auto 1fr auto;
+			gap: 2rem;
+			line-height: 1.6;
 			font: 1em/1.5 'Merriweather', Georgia, serif;
+			font-size: clamp(1rem, 1.5vw, 1.2rem);
 			padding: 3em 0;
+			padding-inline: 1rem;
 		}
 
 		h1 {
@@ -26,6 +34,8 @@
 		header,
 		footer {
 			text-align: center;
+			padding-inline: 1rem;
+			margin-inline: auto;
 		}
 
 		figure {
@@ -34,39 +44,39 @@
 			text-align: center;
 		}
 
-			figcaption {
-				margin-top: 1.5em;
-				font-style: italic;
-				font-weight: 300;
-				color: #CC9B70;
-				text-align: left;
-			}
+		figcaption {
+			margin-top: 1.5em;
+			font-style: italic;
+			font-weight: 300;
+			color: #333;
+			text-align: left;
+		}
 
-				figcaption::before {
-					content: '- ';
-				}
+		figcaption::before {
+			content: '- ';
+		}
 
 		figure.fw {
 			max-width: 100%;
 		}
 
-			figure.fw figcaption,
-			figure.half figcaption {
-				text-align: center;
-			}
-
-				figure.fw figcaption::after,
-				figure.half figcaption::after {
-					content: '-';
-				}
-
-		figure.half {
-			width: 50%;
-			float: left;
+		figure.fw figcaption,
+		figure.half figcaption {
+			text-align: center;
 		}
 
-		.figure-grp + .figure-grp figure {
-			margin-top: -3em;
+		figure.fw figcaption::after,
+		figure.half figcaption::after {
+			content: '-';
+		}
+
+
+		.figure-grp+.figure-grp figure {
+			display: grid;
+			gap: 1rem;
+			max-width: 100%;
+			margin: 2rem auto;
+			justify-items: center;
 		}
 
 		blockquote {
@@ -78,20 +88,24 @@
 			margin: 3em auto;
 		}
 
-			blockquote::before {
-				content: '"';
-			}
+		blockquote::before {
+			content: '"';
+		}
 
-			blockquote cite {
-				margin-top: 1.5em;
-				display: block;
-			}
+		a:focus, button:focus {
+    		outline: 2px solid #007BFF; 
+		}
+
+		blockquote cite {
+			margin-top: 1.5em;
+			display: block;
+		}
 
 		p {
-			color: #444;
-			max-width: 45em;
-			margin-left: auto;
-			margin-right: auto;
+			color: #333;
+			max-width: 40ch;
+			margin-inline: auto;
+			padding-inline: 1rem;
 		}
 
 		img {
@@ -106,75 +120,133 @@
 		}
 	</style>
 </head>
+
 <body>
 
 	<!-- HEADER -->
 	<header>
-		<h1>Clearview office space</h1>
+		<h2>Clearview office space</h2>
 
 		<p>A great place to work, share new ideas and make friends.</p>
 		<p>Just down the street from the Starbucks Coffee Shop.</p>
 
 		<figure class="fw">
-			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060143/office-1_gi1qzg.jpg" alt="office" width="3500" height="2334">
+			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-1_gi1qzg.jpg"
+				srcset="
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-1_gi1qzg.jpg 300w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060143/office-1_gi1qzg.jpg 600w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060143/office-1_gi1qzg.jpg 1200w"
+				alt="Someone Using a Mouse" width="3500" height="2334">
 			<figcaption>Join us today!</figcaption>
 		</figure>
 	</header>
 
 	<!-- MAIN -->
 	<main>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore veniam, accusantium ducimus iure exercitationem accusamus alias unde esse reiciendis. Eum!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, asperiores voluptates non maxime sequi consectetur quasi mollitia corrupti excepturi veritatis qui voluptate corporis, quos perspiciatis cum ducimus nostrum ex esse numquam necessitatibus, illum alias consequuntur eum odio adipisci? Doloremque voluptates repudiandae quis ad excepturi facere, temporibus beatae ex atque sint ipsum omnis illo officiis in cum, odio, eum maxime quidem consectetur. Voluptates facilis delectus architecto est dolore, perspiciatis vitae quidem impedit nostrum esse fugit, velit hic eius laborum itaque reprehenderit repellat soluta repellendus aliquam. Veritatis dolorem officia provident dolores, ad quas rerum autem est, totam id fugiat magni mollitia. Illo.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore veniam, accusantium ducimus iure
+			exercitationem accusamus alias unde esse reiciendis. Eum!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, asperiores voluptates non maxime sequi
+			consectetur quasi mollitia corrupti excepturi veritatis qui voluptate corporis, quos perspiciatis cum
+			ducimus nostrum ex esse numquam necessitatibus, illum alias consequuntur eum odio adipisci? Doloremque
+			voluptates repudiandae quis ad excepturi facere, temporibus beatae ex atque sint ipsum omnis illo officiis
+			in cum, odio, eum maxime quidem consectetur. Voluptates facilis delectus architecto est dolore, perspiciatis
+			vitae quidem impedit nostrum esse fugit, velit hic eius laborum itaque reprehenderit repellat soluta
+			repellendus aliquam. Veritatis dolorem officia provident dolores, ad quas rerum autem est, totam id fugiat
+			magni mollitia. Illo.</p>
 
 		<div class="figure-grp">
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060143/office-2_eiynmf.jpg" alt="office" width="3500" height="2334">
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-2_eiynmf.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-2_eiynmf.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060143/office-2_eiynmf.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060143/office-2_eiynmf.jpg 1200w"
+					alt="Someone with an Ipad and organizing papers" width="3500" height="2334">
 			</figure>
 
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060143/office-3_nznbr1.jpg" alt="office" width="3500" height="2333">
-			</figure>			
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-3_nznbr1.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-3_nznbr1.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060143/office-3_nznbr1.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060143/office-3_nznbr1.jpg 1200w"
+					alt="Image of someone writing in a journal" width="3500" height="2333">
+			</figure>
 		</div> <!-- end figure-grp -->
 
 		<div class="figure-grp">
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060144/office-8_kwq8zk.jpg" alt="office" width="3500" height="2333">
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-8_kwq8zk.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-8_kwq8zk.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060144/office-8_kwq8zk.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060144/office-8_kwq8zk.jpg 1200w"
+					alt="Image of someone looking at an Ipad" width="3500" height="2333">
 			</figure>
 
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060144/office-9_u47jez.jpg" alt="office" width="3500" height="2333">
-			</figure>			
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-9_u47jez.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-9_u47jez.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060144/office-9_u47jez.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060144/office-9_u47jez.jpg 1200w"
+					alt="Image of someone carrying a backpack" width="3500" height="2333">
+			</figure>
 		</div> <!-- end figure-grp -->
 
 		<div class="figure-grp">
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060143/office-1_gi1qzg.jpg" alt="office" width="3500" height="2334">
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-1_gi1qzg.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-1_gi1qzg.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060143/office-1_gi1qzg.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060143/office-1_gi1qzg.jpg 1200w"
+					alt="Someone using a mouse" width="3500" height="2334">
 			</figure>
 
 			<figure class="half">
-				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060143/office-2_eiynmf.jpg" alt="office" width="3500" height="2334">
-			</figure>			
+				<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-2_eiynmf.jpg"
+					srcset="
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060143/office-2_eiynmf.jpg 300w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060143/office-2_eiynmf.jpg 600w,
+				https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060143/office-2_eiynmf.jpg 1200w"
+					alt="Someone with an Ipad and organizing papers" width="3500" height="2334">
+			</figure>
 		</div> <!-- end figure-grp -->
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quisquam voluptatum in ipsa provident blanditiis nesciunt facere. Ea, officiis provident placeat fugit cupiditate minima enim veniam libero hic tempore deserunt iusto qui harum vero consectetur suscipit, architecto cum voluptate assumenda. Eveniet facere officiis ullam, est quasi debitis voluptates corporis culpa!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quisquam voluptatum in ipsa provident
+			blanditiis nesciunt facere. Ea, officiis provident placeat fugit cupiditate minima enim veniam libero hic
+			tempore deserunt iusto qui harum vero consectetur suscipit, architecto cum voluptate assumenda. Eveniet
+			facere officiis ullam, est quasi debitis voluptates corporis culpa!</p>
 
 		<figure>
-			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060144/office-4_ik6pjo.jpg" alt="office" width="3500" height="2333">
+			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-4_ik6pjo.jpg"
+				srcset="
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-4_ik6pjo.jpg 300w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060144/office-4_ik6pjo.jpg 600w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060144/office-4_ik6pjo.jpg 1200w"
+				alt="Image of Sticky notes displaying different things" width="3500" height="2333">
 			<figcaption>Post-its</figcaption>
 		</figure>
 
 		<figure class="fw">
-			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/q_auto,w_300/v1730060144/office-5_loa4gi.jpg" alt="office" width="3500" height="2333">
-			<figcaption>Laptop on table</figcaption>
-		</figure>		
+			<img src="https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-5_loa4gi.jpg"
+				srcset="
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_300/v1730060144/office-5_loa4gi.jpg 300w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_600/v1730060144/office-5_loa4gi.jpg 600w,
+			https://res.cloudinary.com/ddxnktu31/image/upload/f_auto,q_auto,w_1200/v1730060144/office-5_loa4gi.jpg 1200w"
+				alt="Image of a room with a laptop and a light" width="3500" height="2333">
+			<figcaption>An open office layout featuring collaborative spaces</figcaption>
+		</figure>
 	</main>
 
 	<!-- FOOTER -->
 	<footer>
 		<hr>
-	
+
 		<p>Thanks for dropping by! Hope to see you soon in your new office.</p>
 	</footer>
 
 </body>
+
 </html>
